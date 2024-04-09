@@ -11,13 +11,13 @@ from pyapacheatlas.auth import ServicePrincipalAuthentication
 from pyapacheatlas.core import PurviewClient
 
 oauth = ServicePrincipalAuthentication(
-    tenant_id=<<tenant_id>>,
-    client_id=<<client_id>>,
-    client_secret=<<client_secret>>
+    tenant_id='fd799da1-bfc1-4234-a91c-72b3a1cb9e26',
+    client_id=os.getenv('client-id'),
+    client_secret=os.getenv('app-secret')
 )
 
 client = PurviewClient(
-    account_name=<<purview instance>>,
+    account_name=os.getenv('purview'),
     authentication=oauth
 )
 
